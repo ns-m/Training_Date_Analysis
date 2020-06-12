@@ -197,147 +197,7 @@
 #     if group == 'group E':
 #         print(f'{group}: Count - {number}, Math - {math_avg_e:.2f}, Reading - {reading_avg_e:.2f}, Writing - {writing_avg_e:.2f}, Total - {total_e:.2f}')
 
-# f = open('StudentsPerformance.csv')
-# boys = 0
-# for line in f:
-#     info = line.split(',')
-#     if info[0] == '"gender"':
-#         continue
-#     if info[0] == '"male"':
-#         if info[3] == '"standard"':
-#             boys += 1
-# print(boys)
 
-# f = open('StudentsPerformance.csv')
-# boys = 0
-# for line in f:
-#     info = line.split(',')
-#     if info[0] == '"gender"':
-#         continue
-#     if info[0] == '"male"':
-#         if info[4] == '"completed"':
-#             boys += 1
-# print(boys)
-
-# with open('StudentsPerformance.csv') as f:
-#     girls = 0
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[0] == '"female"':
-#             if info[2] == '"master\'s degree"':
-#                 girls += 1
-#     print(girls)
-
-# with open('StudentsPerformance.csv') as f:
-#     group_c = 0
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[1] == '"group C"':
-#             if info[4] == '"completed"':
-#                 group_c += 1
-#     print(group_c)
-
-# with open('StudentsPerformance.csv') as f:
-#     girls = 0
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[0] == '"female"':
-#             if info[2] == '"master\'s degree"' and int(info[5][1:-1]) > 90:
-#                 girls += 1
-#     print(girls)
-
-# with open('StudentsPerformance.csv') as f:
-#     boys = []
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[0] == '"male"':
-#             boys.append(int(info[6][1:-1]))
-#     print(sum(boys)/len(boys))
-
-# with open('StudentsPerformance.csv') as f:
-#     read = []
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[5][1:-1] == '100':
-#             read.append(int(info[6][1:-1]))
-#     print(sum(read)/len(read))
-
-# with open('StudentsPerformance.csv') as f:
-#     writing = []
-#     for line in f:
-#         info = line.split(',')
-#         if info[0] == '"gender"':
-#             continue
-#         if info[3] == '"free/reduced"':
-#             writing.append(int(info[7][1:-2]))
-#     print(sum(writing)/len(writing))
-
-# import datetime
-#
-# now = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-# print(now)
-
-# import time
-# time_tuple = (2018, 12, 31, 0, 0, 0, 0, 0, 0)
-# timestamp = time.mktime(time_tuple)
-# print(timestamp)
-
-# import time
-# time_tuple = (2019, 1, 1, 0, 0, 0, 0, 0, 0)
-# timestamp = time.mktime(time_tuple)
-# print(timestamp)
-
-# import time
-# time_tuple = (2019, 1, 1, 0, 0, 0, 0, 0, 0)
-# time_tuple2 = (2019, 1, 31, 0, 0, 0, 0, 0, 0)
-# timestamp = time.mktime(time_tuple2) - time.mktime(time_tuple)
-# print(timestamp)
-
-# from datetime import datetime
-# date_string = '2019-07-07T18:59:33'
-# df = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S')
-# # date_format = f"{df.day}.{df.month}.{df.year}"
-# date_format = df.strftime("%d.%m.%Y")
-# print(date_format)
-
-# from datetime import datetime
-# datetime_list = []
-# dt_list = ['2019-07-07T18:59:06', '2019-07-07T19:00:02', '2019-07-07T19:01:04']
-# for dt in dt_list:
-#     elem = datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S')
-#     datetime_list.append(elem)
-# print(datetime_list)
-
-# from datetime import datetime
-#
-# report_seconds = []
-# datetime_list = [
-#     datetime(2019, 7, 7, 18, 59, 6),
-#     datetime(2019, 7, 7, 19, 0, 2),
-#     datetime(2019, 7, 7, 19, 1, 4)
-# ]
-# for dts in datetime_list:
-#     report_seconds.append(dts.second)
-#
-# print(report_seconds)
-
-# from datetime import datetime
-# report_seconds = [6, 2, 4]
-#
-# total_time = sum(report_seconds)
-# print(total_time)
-
-# numbers = [1, 3, 5, 7]
 # def get_median(numbers):
 #     nums = sorted(numbers)
 #     if len(nums)%2 != 0:
@@ -345,26 +205,37 @@
 #     else:
 #         result = (nums[int(len(nums)/2-1)] + nums[int(len(nums)/2)])/2
 #     return result
-# print(get_median(numbers))
+#
+# print(get_median([3, 3, 4, 4]))
 
 # user_db = [{'orders': 12}, {'orders': 30}, {'orders': 45}]
 #
 # # перепишите эту часть
-# def avg_orders(user_db):
-#     order_sum = sum([user['orders'] for user in user_db])
-#     orders_per_user = order_sum/len(user_db)
-#     print(orders_per_user)
-# avg_orders(user_db)
+# order_sum = sum([user['orders'] for user in user_db])
+# orders_per_user = order_sum/len(user_db)
+# print(orders_per_user)
 
-from random import randint
-# добавьте функцию get_euro_rate
-def get_euro_rate():
-    result = randint(65, 85)
-    return result
+# values = [1, 2, 3]
+# vectors = [(10, 3), (4, 5), (6, 7)]
+# a1 = list(map(lambda x: x+2, [1, 2, 3]))
+# # a2 = map(values, lambda x: x**0.5)
+# a3 = list(map(lambda vec: (vec[0]**2 + vec[1]**2)**0.5, vectors))
+# # a4 = list(map(lambda x, y: x + y, values))
+#
+# print(a3)
 
-# используйте get_euro_rate в следующей функции
-def to_euro(price):
-    exchange_rate = get_euro_rate()
-    rounded = round(price/exchange_rate, 2)
-    return '€' + str(rounded)
-print(to_euro(100))
+# values = [4, 8, 15, 16, 23, 42]
+# mean = 18
+#
+# result = map(lambda x: x - mean, values)
+# print(list(result))
+
+# def normalize(numbers, mean=0, std=1):
+#     result = [int((x - mean)/std) for x in numbers]
+#     return result
+# print(normalize([10, 20], mean=15))
+
+# def sum_args(*args):
+#     result = sum(args)
+#     return result
+# print(sum_args(10, 15, -4))
