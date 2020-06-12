@@ -239,3 +239,65 @@
 #     result = sum(args)
 #     return result
 # print(sum_args(10, 15, -4))
+
+# def count_letters(sentence, average=False):
+#     my_list = sentence.split(' ')
+#     if average == False:
+#         count_list = [len(x) for x in my_list]
+#         result = sum(count_list)
+#     else:
+#         count_list = [len(x)/len(my_list) for x in my_list]
+#         result = sum(count_list)
+#     return result
+#
+#
+# print(count_letters("I will build my own theme park", average=True))
+
+# words = ["sofa", "suitcase", "valise", "picture", "basket", "carton", "doggie"]
+# x = list(map(lambda w: sorted(w)[2], words))[3]
+# print(x)
+
+# def always(n):
+#     return (lambda :n)
+# five = always(5)
+# print(five())
+
+import pandas as pd
+from IPython.display import display
+from pprint import pprint
+#
+# data = pd.Series(["Январь", "Февраль", "Март", "Апрель"],
+#                  index = ['Первый', "Второй", "Третий", "Четвёртый"])
+# display(data)
+# print('this loc')
+# pprint(data.loc[['Первый', "Четвёртый"]])
+# print('this out loc')
+# pprint(data[['Второй', "Третий"]])
+# print('this iloc')
+# pprint(data.iloc[[0, 2]])
+# print('this out iloc')
+# pprint(data[[1, 3]])
+
+# data = pd.Series(list(range(10, 1001)))
+# print(data.loc[10] + data.loc[23] - data.loc[245] + data.iloc[122])
+# print(data.iloc[990])
+
+# df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
+# display(df)
+
+# df = pd.DataFrame([ [1,2,3], [2,3,4] ],
+#                   columns = ['foo', 'bar', 'baz'],
+#                   index = ['foobar', 'foobaz'])
+# display(df)
+
+football = pd.read_csv('data_sf.csv')
+
+# display(football)
+# display(football.head(10))
+# display(football.tail(7))
+# display(football.info())
+# display(football.describe())
+display(football.describe(include = ['object']))
+print('----------------')
+with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+    display(football.describe())
