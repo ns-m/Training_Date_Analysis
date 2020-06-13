@@ -297,7 +297,75 @@ football = pd.read_csv('data_sf.csv')
 # display(football.tail(7))
 # display(football.info())
 # display(football.describe())
-display(football.describe(include = ['object']))
-print('----------------')
-with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-    display(football.describe())
+# display(football.describe(include = ['object']))
+# print('----------------')
+# with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+#     display(football.describe())
+
+# df = pd.DataFrame([[i,i+1.2,i+2, 'hi'] for i in range(10)],
+#                   columns = ['foo', 'bar', 'baz', 'foobar'])
+# display(df)
+# print('------')
+# display(df.mean())
+
+# df = pd.DataFrame([[i,i+1.2,i+2, 'hi'] for i in range(10)],
+#                   columns = ['foo', 'bar', 'baz', 'foobar'])
+# display(df['foo'])
+# display(df.bar)
+
+# df = pd.DataFrame([[i,i+1.2,i+2, 'hi'] for i in range(10)],
+#                   columns = ['foo', 'bar', 'baz', 'foobar'])
+# display(df.bar)
+# display(df.bar.mean())
+# display(df.bar.std())
+
+# df = pd.DataFrame(football)
+# display(df.Age.mean())
+# display(df.Composure.count())
+# display(df.ShortPassing.std())
+# display(df.Wage.sum())
+# display(df.Value.min())
+
+# display(football[football.Age < 20])
+# display(football[football.Age > football.Age.mean()])
+# display(football[(football.Age < football.Age.mean())|
+#         (football.Club == 'FC Barcelona')])
+
+# display(football[(football.Age < football.Age.mean())&
+#         (football.Club == 'FC Barcelona')].Wage.mean())
+
+# display(football[(football.Wage > football.Wage.mean())].SprintSpeed.mean())
+
+# display(football[(football.Wage < football.Wage.mean())].SprintSpeed.mean())
+
+# display(football[(football.Wage == football.Wage.max())].Position)
+
+# display(football[(football.Nationality == 'Brazil')].Penalties.sum())
+
+# display(football[(football.HeadingAccuracy > 50)].Age.mean())
+
+# display(football[(football.Composure > (football.Composure.max() * 0.9)) &
+#                  (football.Reactions > (football.Reactions.max() * 0.9))].Age.min())
+
+# display(football[(football.Age == football.Age.max())].Reactions.mean() -
+#         football[(football.Age == football.Age.min())].Reactions.mean())
+
+# df = football[(football.Value > football.Value.mean())].Nationality #shit code style
+# my_list = {}
+# for i in df:
+#     if i in my_list:
+#         my_list[i]+=1
+#     else:
+#         my_list[i] = 1
+# list_d = list(my_list.items())
+# list_d.sort(key=lambda i: i[1])
+# for i in list_d:
+#     print(i[0], ':', i[1]) #shit code style
+
+# display(football[(football.Value > football.Value.mean())].Nationality.value_counts().get([0]))
+
+# display(football[(football.GKReflexes == football.GKReflexes.max())].Wage.mean() /
+#         football[(football.GKHandling == football.GKHandling.max())].Wage.mean())
+
+# display(football[(football.Aggression == football.Aggression.max())].ShotPower.mean() /
+#         football[(football.Aggression == football.Aggression.min())].ShotPower.mean())
