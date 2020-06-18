@@ -362,10 +362,58 @@ football = pd.read_csv('data_sf.csv')
 # for i in list_d:
 #     print(i[0], ':', i[1]) #shit code style
 
-# display(football[(football.Value > football.Value.mean())].Nationality.value_counts().get([0]))
+# display(football[(football.Value > football.Value.mean())].Nationality.value_counts().index[0])
 
 # display(football[(football.GKReflexes == football.GKReflexes.max())].Wage.mean() /
 #         football[(football.GKHandling == football.GKHandling.max())].Wage.mean())
 
 # display(football[(football.Aggression == football.Aggression.max())].ShotPower.mean() /
 #         football[(football.Aggression == football.Aggression.min())].ShotPower.mean())
+
+# df = football[(football.Value > football.Value.mean())].Nationality.value_counts()
+# print(len(df.index))
+# print(df['Spain'])
+# print(df.loc[df>1])
+
+# df = football.Club.value_counts()
+# print(len(df.index))
+# display(df)
+
+# display(football.Position.value_counts(normalize=True)) # в процентах
+
+# display(football['Age'].value_counts())
+
+# display(football['Wage'].value_counts())
+
+# display(football['Wage'].value_counts(bins=4))
+# football_sm = football[football.columns[1:8]]
+# df = football_sm['Wage'].value_counts(bins=4)
+# display(df)
+# display(df.index)
+# display(df.index[3])
+# display(df.index[3].left)
+# display(df.index[3].right)
+# display(football_sm['Wage']>df.index[3].left)
+# display(football_sm.loc[(football_sm['Wage'] > df.index[3].left) & (football_sm['Wage'] <= df.index[3].right)])
+
+# display(football['FKAccuracy'].value_counts(bins=5))
+
+# display(football['Nationality'].unique())
+# display(football['Nationality'].nunique())
+
+# display(football['Nationality'].value_counts().reset_index())
+# df = football['Nationality'].value_counts().reset_index()
+# df.columns = ['Nationality','Players Count']
+# display(df)
+
+# display(football[(football.Nationality == 'Spain')]['Wage'].value_counts(normalize=True, bins=4))
+
+# display(football[(football.Club == 'Manchester United')]['Nationality'].nunique())
+
+# display(football[((football.Nationality == 'Brazil') & (football.Club == 'Juventus'))])
+
+# display(football[((football.Age > 35))]['Club'].value_counts())
+
+# display(football[(football.Nationality == 'Argentina')]['Age'].value_counts(bins=4))
+
+# display(football[(football.Nationality == 'Spain')]['Age'].value_counts(normalize=True)[21] * 100)
