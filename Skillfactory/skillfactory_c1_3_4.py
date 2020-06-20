@@ -417,3 +417,20 @@ football = pd.read_csv('data_sf.csv')
 # display(football[(football.Nationality == 'Argentina')]['Age'].value_counts(bins=4))
 
 # display(football[(football.Nationality == 'Spain')]['Age'].value_counts(normalize=True)[21] * 100)
+
+# display(football.groupby(['Club']).sum())
+
+# display(football.groupby(['Club']).sum().loc['FC Barcelona'])
+
+# display(football.groupby(['Club']).sum().loc['FC Barcelona']['Wage'])
+
+# display(football.groupby(['Club'])['Wage'].sum())
+
+# display(football.groupby(['Club'])['Wage'].sum().sort_values(ascending=False))
+
+# display(football.groupby(['Position'])['Wage'].sum().sort_values(ascending=False))
+
+# display(football.groupby(['Nationality'])[['Wage','Age','ShotPower']].mean().sort_values(['Wage'],ascending=False).head(10))
+# display(football.loc[football['Nationality'] == 'Dominican Republic'][['Name','Club','Wage','Age','ShotPower']])
+
+display(football.groupby(['Position'])[['Wage','Value']].mean().sort_values(['Value'],ascending=False).head(10))
