@@ -433,4 +433,18 @@ football = pd.read_csv('data_sf.csv')
 # display(football.groupby(['Nationality'])[['Wage','Age','ShotPower']].mean().sort_values(['Wage'],ascending=False).head(10))
 # display(football.loc[football['Nationality'] == 'Dominican Republic'][['Name','Club','Wage','Age','ShotPower']])
 
-display(football.groupby(['Position'])[['Wage','Value']].mean().sort_values(['Value'],ascending=False).head(10))
+# display(football.groupby(['Position'])[['Wage','Value']].mean().sort_values(['Value'],ascending=False).head(10))
+
+# df = football.groupby(['Club'])['Wage'].agg(['mean', 'median'])
+# display(df[(df['mean'] == df['median'])].count())
+# display(df[(df['mean'] == df['median'])].max())
+# display(df[(df['mean'] == df['median'])].sort_values(['mean'],ascending=False))
+
+# display(football.groupby(['Club'])['Wage'].sum().sort_values(ascending=False)['Chelsea'])
+
+# display(football[(football.Nationality == 'Argentina')].groupby(['Age'])['Wage'].max()[20])
+# display(football[(football.Nationality == 'Argentina')].groupby(['Age'])['Wage'].max()[30])
+
+# display(football[(football.Nationality == 'Argentina')].groupby(['Age'])['Wage'].min()[30])
+
+# display(football[(football.Nationality == 'Argentina') & (football.Club == 'FC Barcelona')][['Strength','Balance']].max())
