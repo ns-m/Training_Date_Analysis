@@ -265,6 +265,8 @@
 import pandas as pd
 from IPython.display import display
 from pprint import pprint
+pd.set_option('display.max_columns', 40)
+pd.set_option('display.width', 2000)
 #
 # data = pd.Series(["Январь", "Февраль", "Март", "Апрель"],
 #                  index = ['Первый', "Второй", "Третий", "Четвёртый"])
@@ -448,3 +450,21 @@ football = pd.read_csv('data_sf.csv')
 # display(football[(football.Nationality == 'Argentina')].groupby(['Age'])['Wage'].min()[30])
 
 # display(football[(football.Nationality == 'Argentina') & (football.Club == 'FC Barcelona')][['Strength','Balance']].max())
+
+# pivot = football.loc[football['Club'].isin(['FC Barcelona','Real Madrid','Juventus','Manchester United'])].pivot_table(values=['Wage'],
+# index=['Nationality'],
+# columns=['Club'],
+# aggfunc='sum',
+# margins=True,
+# fill_value=0)
+# display(pivot)
+
+# display(football.pivot_table(index=['Club'], columns=['Position'], values = 'Name', aggfunc = 'count',fill_value=0)['GK'].mean())
+
+# display(football.pivot_table(index=['Club'], columns=['Position'], values = 'Name', aggfunc = 'count',fill_value=0)['CM'].value_counts()[0])
+
+# display(football.loc[football['Club'].isin(['AS Monaco'])].pivot_table(index=['Nationality'], columns=['Club'],values='Wage'))
+
+# display(football.pivot_table(index=['Club'], columns=['Position'], values='SprintSpeed', aggfunc='mean', margins=True, fill_value=0).max().sort_values(ascending=False))
+
+# display(football.pivot_table(index=['Club'], columns=['Position'], values='SprintSpeed', aggfunc='mean', margins=True, fill_value=0)['ST'].sort_values(ascending=False))
