@@ -292,7 +292,7 @@ pd.set_option('display.width', 2000)
 #                   index = ['foobar', 'foobaz'])
 # display(df)
 
-football = pd.read_csv('data_sf.csv')
+# football = pd.read_csv('data_sf.csv')
 
 # display(football)
 # display(football.head(10))
@@ -468,3 +468,16 @@ football = pd.read_csv('data_sf.csv')
 # display(football.pivot_table(index=['Club'], columns=['Position'], values='SprintSpeed', aggfunc='mean', margins=True, fill_value=0).max().sort_values(ascending=False))
 
 # display(football.pivot_table(index=['Club'], columns=['Position'], values='SprintSpeed', aggfunc='mean', margins=True, fill_value=0)['ST'].sort_values(ascending=False))
+
+
+movies = pd.read_csv('movies.csv')
+ratings = pd.read_csv('ratings.csv')
+
+# display(ratings.count())
+# display(movies.head(1))
+# display(ratings['rating'].min())
+# display(ratings['rating'].max())
+
+# display(movies.count())
+
+display(ratings.merge(movies, on='movieId', how='left').head())
