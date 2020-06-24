@@ -470,8 +470,8 @@ pd.set_option('display.width', 2000)
 # display(football.pivot_table(index=['Club'], columns=['Position'], values='SprintSpeed', aggfunc='mean', margins=True, fill_value=0)['ST'].sort_values(ascending=False))
 
 
-movies = pd.read_csv('movies.csv')
-ratings = pd.read_csv('ratings.csv')
+# movies = pd.read_csv('movies.csv')
+# ratings = pd.read_csv('ratings.csv')
 
 # display(ratings.count())
 # display(movies.head(1))
@@ -480,4 +480,67 @@ ratings = pd.read_csv('ratings.csv')
 
 # display(movies.count())
 
-display(ratings.merge(movies, on='movieId', how='left').head())
+# display(ratings.merge(movies, on='movieId', how='left').head())
+
+# sm_ratings = pd.read_csv('ratings_example.txt', sep = '\t')
+# display(sm_ratings.head())
+
+# sm_movies = pd.read_csv('movies_example.txt', sep = '\t')
+# display(sm_movies.head())
+
+# display(sm_ratings.merge(sm_movies, how = 'left', on = 'movieId'))
+
+# display(sm_ratings.merge(sm_movies, how = 'outer', on = 'movieId'))
+
+# sm_movies.drop_duplicates(subset = 'movieId', keep = 'first', inplace = True)
+# display(sm_movies.head())
+
+# display(sm_ratings.merge(sm_movies, how = 'left', on = 'movieId'))
+
+# items_dict = {
+#
+#     'item_id': [417283, 849734, 132223, 573943, 19475, 3294095, 382043, 302948, 100132, 312394],
+#
+#     'vendor': ['Samsung', 'LG', 'Apple', 'Apple', 'LG', 'Apple', 'Samsung', 'Samsung', 'LG', 'ZTE'],
+#
+#     'stock_count': [54, 33, 122, 18, 102, 43, 77, 143, 60, 19]
+#
+# }
+#
+# purchase_log = {
+#
+#     'purchase_id': [101, 101, 101, 112, 121, 145, 145, 145, 145, 221],
+#
+#     'item_id': [417283, 849734, 132223, 573943, 19475, 3294095, 382043, 302948, 103845, 100132],
+#
+#     'price': [13900, 5330, 38200, 49990, 9890, 33000, 67500, 34500, 89900, 11400]
+#
+# }
+#
+# items_df = pd.DataFrame(items_dict)
+# purchase_df = pd.DataFrame(purchase_log)
+
+# display(items_df.merge(purchase_df, how = 'outer', on = 'item_id'))
+# display(purchase_df.merge(items_df, how = 'outer', on = 'item_id'))
+
+# merged = items_df.merge(purchase_df, how = 'inner', on = 'item_id')
+# display(merged)
+# print(f'Count of models - {len(merged)}')
+
+# merged = items_df.merge(purchase_df, how = 'outer', on = 'item_id')
+# merged['sum_sell'] = merged['stock_count'] * merged['price']
+# display(merged[(merged['sum_sell'] == merged['sum_sell'].max())]['item_id'])
+# merged.loc['ALL_sum'] = merged['sum_sell'].sum()
+# display(merged)
+
+import glob, os
+
+# files = os.listdir('data')
+# pprint(files)
+
+# files = ['setup.py', 'ratings.txt', 'stock_stats.txt', 'movies.txt', 'run.sh', 'game_of_thrones.mov']
+# data = []
+# for file in files:
+#     if file.endswith(".txt"):
+#         data.append(file)
+# pprint(data)
