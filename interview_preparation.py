@@ -41,3 +41,15 @@ def largest_number(some_digit):
     return 10 ** some_digit - 1
 
 # print(largest_number(4))
+
+def binary(number):
+    result = ''
+    while number > 0:
+        if number != 0:
+            result += str(number - number // 2)
+            number = number // 2
+            return result
+        else:
+            result += 0
+            return result
+print(binary(4))

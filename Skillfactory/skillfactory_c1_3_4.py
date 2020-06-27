@@ -544,3 +544,44 @@ import glob, os
 #     if file.endswith(".txt"):
 #         data.append(file)
 # pprint(data)
+
+# for root, dirs, files in os.walk('data'):
+#     print(root, dirs, files)
+
+# files_in_data = []
+# for files in os.listdir('data'):
+#     if files.endswith(".txt"):
+#         files_in_data.append(files)
+#
+# data = pd.DataFrame(columns = ['userId', 'movieId', 'rating', 'timestamp'])
+# temp = pd.DataFrame(columns = ['userId', 'movieId', 'rating', 'timestamp'])
+# for fl in files_in_data:
+#     temp = pd.read_csv(os.path.join('data', fl), names=['userId', 'movieId', 'rating', 'timestamp'])
+#     data = pd.concat([data, temp])
+# display(data)
+
+# display(ratings[(ratings['rating'] == ratings['rating'].min())].count())
+
+# display(ratings.merge(movies, how='outer', on='movieId'))
+
+# merged = ratings.merge(movies, how='outer', on='movieId')
+# display(merged[(merged['movieId']==3456)])
+
+import matplotlib
+from matplotlib import pyplot as plt
+plt.interactive(True)
+
+macduck = pd.read_csv('tips.csv')
+# display(macduck.count())
+
+# display(macduck['total_bill'].max())
+
+# plt.show(macduck.plot())
+# #
+# plt.show(macduck['total_bill'].plot(kind = 'hist'))
+# #
+# plt.show(macduck['total_bill'].plot(kind = 'hist', grid = True, title = 'Общая сумма счёта'))
+# #
+# plt.show(macduck['day'].value_counts().plot(kind = 'bar', grid = True, colormap = 'coolwarm', title = 'Количество посетителей по дням'))
+
+# plt.show(macduck.groupby(by = ['sex', 'smoker'])['tip'].mean().plot(kind = 'bar', grid= True))
