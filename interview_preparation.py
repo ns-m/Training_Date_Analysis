@@ -44,12 +44,13 @@ def largest_number(some_digit):
 
 def binary(number):
     result = ''
+    if number == 0:
+        print(0)
     while number > 0:
-        if number != 0:
-            result += str(number - number // 2)
-            number = number // 2
-            return result
-        else:
-            result += 0
-            return result
-print(binary(4))
+        modulo = str(number % 2)
+        result = modulo + result
+        number = int(number / 2)
+    print(result)
+
+
+binary(0)
