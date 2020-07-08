@@ -585,3 +585,21 @@ macduck = pd.read_csv('tips.csv')
 # plt.show(macduck['day'].value_counts().plot(kind = 'bar', grid = True, colormap = 'coolwarm', title = 'Количество посетителей по дням'))
 
 # plt.show(macduck.groupby(by = ['sex', 'smoker'])['tip'].mean().plot(kind = 'bar', grid= True))
+
+# def maskify(cc):
+#     if len(cc) <= 4:
+#         return cc
+#     else:
+#         cc2 = list(map(lambda c : c.replace(c, '#'), cc[:-4]))
+#         cc2 += cc[-4:]
+#         return (''.join(cc2))
+
+# def maskify(cc):
+#     return len(cc[:-4])*"#" + cc[-4:]
+#
+# print(maskify("1"))
+
+def descending_order(num):
+    return int(''.join(sorted(str(num), reverse = True)))
+
+print(descending_order(0))
