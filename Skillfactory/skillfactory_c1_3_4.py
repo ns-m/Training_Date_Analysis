@@ -599,7 +599,27 @@ macduck = pd.read_csv('tips.csv')
 #
 # print(maskify("1"))
 
-def descending_order(num):
-    return int(''.join(sorted(str(num), reverse = True)))
+# def descending_order(num):
+#     return int(''.join(sorted(str(num), reverse = True)))
+#
+# print(descending_order(0))
 
-print(descending_order(0))
+# def DNA_strand(dna):
+#     dna2 = []
+#     for x in dna:
+#         if x == 'A':
+#             dna2 += 'T'
+#         elif x == 'T':
+#             dna2 += 'A'
+#         elif x == 'G':
+#             dna2 += 'C'
+#         elif x == 'C':
+#             dna2 += 'G'
+#     dna = ''.join(dna2)
+#     return dna
+
+
+# def DNA_strand(dna):
+#     return ''.join([{'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}[letter] for letter in dna])
+#
+# print(DNA_strand("GTAT"))
