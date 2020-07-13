@@ -623,3 +623,13 @@ macduck = pd.read_csv('tips.csv')
 #     return ''.join([{'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}[letter] for letter in dna])
 #
 # print(DNA_strand("GTAT"))
+
+def filter_list(l):
+    # l2 = []
+    # for x in l:
+    #     if isinstance(x, int):
+    #         l2.append(x)
+    # return l2
+    return [i for i in l if not isinstance(i, str)]
+
+print(filter_list([1,'a','b',0,15]))
