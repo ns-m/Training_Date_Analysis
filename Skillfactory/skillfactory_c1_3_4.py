@@ -630,6 +630,14 @@ def filter_list(l):
     #     if isinstance(x, int):
     #         l2.append(x)
     # return l2
-    return [i for i in l if not isinstance(i, str)]
+    # return [i for i in l if not isinstance(i, str)]
+    return [e for e in l if isinstance(e, int)]
+# print(filter_list([1,'a','b',0,15]))
 
-print(filter_list([1,'a','b',0,15]))
+def namelist(names):
+    y = ''
+    for x in names:
+        for val in x.values():
+            y.join(val)
+    return f'{y}, {y} & {y}'
+print(namelist([ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]))
