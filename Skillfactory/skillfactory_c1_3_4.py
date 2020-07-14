@@ -635,9 +635,21 @@ def filter_list(l):
 # print(filter_list([1,'a','b',0,15]))
 
 def namelist(names):
-    y = ''
-    for x in names:
-        for val in x.values():
-            y.join(val)
-    return f'{y}, {y} & {y}'
-print(namelist([ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]))
+    # y = []
+    # for x in names:
+    #     for val in x.values():
+    #         y.append(val)
+    # if len(y) > 1:
+    #     y2 = list(map(lambda x: f'{x},', y[:-2]))
+    #     y3 = f'{y[-2]} & {y[-1]}'
+    #     if y2 != []:
+    #         y4 = ' '.join(y2)
+    #         y = y4 + ' ' + y3
+    #     else:
+    #         y = y3
+    # else:
+    #     y = str(*y)
+    # return y
+    return ", ".join([name["name"] for name in names])[::-1].replace(",", "& ", 1)[::-1]
+
+# print(namelist([{'name': 'Bart'}]))
