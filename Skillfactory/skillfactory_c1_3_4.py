@@ -653,3 +653,21 @@ def namelist(names):
     return ", ".join([name["name"] for name in names])[::-1].replace(",", "& ", 1)[::-1]
 
 # print(namelist([{'name': 'Bart'}]))
+
+# ['n', 's', 'w', 'e']
+def is_valid_walk(walk):
+    if len(walk) != 10:
+        return False
+    else:
+        result = 0
+        res2 = ['n', 's', 'w', 'e']
+        a = 0
+        for x in walk:
+            a += res2.index(x)
+            if x == 'n' or x == 'w':
+                result += 1
+            elif x == 's' or x == 'e':
+                result -= 1
+        return result == 0
+
+print(is_valid_walk(['n', 's', 'e', 'n', 'n', 'w', 'e', 's', 'n', 's']))
