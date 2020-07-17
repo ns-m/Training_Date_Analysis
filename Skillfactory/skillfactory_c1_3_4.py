@@ -659,15 +659,16 @@ def is_valid_walk(walk):
     if len(walk) != 10:
         return False
     else:
-        result = 0
         res2 = ['n', 's', 'w', 'e']
-        a = 0
+        a = []
         for x in walk:
-            a += res2.index(x)
-            if x == 'n' or x == 'w':
-                result += 1
-            elif x == 's' or x == 'e':
-                result -= 1
+            a.append(res2.index(x))
+        print(a)
+        for i in range(len(a)-1):
+            if int(a[i])-int(a[i+1]) not in [1, -1]:
+                return False
+            else:
+                result = 0
         return result == 0
 
-print(is_valid_walk(['n', 's', 'e', 'n', 'n', 'w', 'e', 's', 'n', 's']))
+print(is_valid_walk(['e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w']))
